@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.faq-item {
+    margin-bottom: 10px 10px 10px 10px;
+    border: 1px solid #1f1c1c;
+    border-radius: 10px;
+}
+
+.faq {
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.question {
+    padding: 10px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    user-select: none;
+}
+
+.answer {
+    display: none;
+    padding: 10px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+.answer.visible {
+    display: block;
+}   
