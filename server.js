@@ -1,17 +1,17 @@
 const express = require('express');
-const app = express();
 const path = require('path');
 
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// serve static files (HTML, CSS, JS, google file)
 app.use(express.static(path.join(__dirname, 'public')));
 
+// homepage
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.listen(3000, () => {
-  console.log('Server running on http://localhost:3306');
-});
-const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
