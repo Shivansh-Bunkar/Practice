@@ -15,3 +15,32 @@ questions.forEach(question => {
     currentAnswer.classList.toggle('visible');
   });
 });
+const form = document.getElementById('faqForm');
+const formMessage = document.getElementById('formMessage');
+
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = {
+        name: form.name.value,
+        email: form.email.value,
+        question: form.question.value
+    };
+
+    try {
+        const res = await fetch('/submit-question', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        });
+
+        if (res.ok) {
+            formMessage.textContent = "Your question has been submitted!";
+            form.reset();
+        } else {
+            formMessage.textContent = "Error submitting, try again.";
+        }
+    } catch (err) {
+        formMessage.textContent = "Server error, try again later.";
+    }
+});

@@ -11,7 +11,7 @@ body {
 
 .faq {
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #514d4d;
     border-radius: 5px;
 }
 
@@ -35,7 +35,7 @@ body {
 /* General page styling */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
-    background: #f5f5f5;
+    background: #e073d3c3;
     margin: 0;
     padding: 0;
     color: #333;
@@ -45,7 +45,7 @@ body {
 .container {
     max-width: 800px;
     margin: 50px auto;
-    background: #fff;
+    background: #3e7a7b;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -60,7 +60,7 @@ h1, h2 {
 /* FAQ item */
 .faq-item {
     margin-bottom: 20px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #0f0d0d;
     padding-bottom: 15px;
 }
 
@@ -86,4 +86,35 @@ h1, h2 {
 /* Show answer when active */
 .faq-item.active p {
     display: block;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #4a968c;
+}
+
+button {
+    padding: 10px;
+    background-color: #2980b9;
+    color: rgb(140, 117, 203);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3498db;
+}
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #cc8c67;
+    margin-top: 30px;
+    border-top: 1px solid #382020;
 }

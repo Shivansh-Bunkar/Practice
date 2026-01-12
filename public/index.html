@@ -8,6 +8,8 @@
     <title>FAQ Section</title>
 </head>
 <body>
+    <h1>This is a FAQ Section(Made by Shivansh fro Practice)</h1>
+    <h2>There are some frequently asked questions here for reading only:</h2>
     <div class="container">
         <div class="faq-item">
             <div class="question">What is HTML?</div>
@@ -135,6 +137,23 @@
             <div class="question">What is React?</div>
             <div class="answer">React is a JavaScript library for building user interfaces.</div>
         </div>    
+    </div>
+    <div class="container">
+        <h2>Contact Us / Submit a Question</h2>
+        <form id="faqForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="question">Your Question:</label>
+             <textarea id="question" name="question" rows="4" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <p id="formMessage" style="color:green;"></p>
     </div>
 
     <script src="script.js"></script>
