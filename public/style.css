@@ -191,3 +191,68 @@ footer {
     margin-top: 30px;
     border-top: 1px solid #382020;
 }
+
+/* Grid layout like React cards */
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* change 3 to 2 or 4 if needed */
+  gap: 25px;
+  padding: 30px;
+}
+
+/* Each FAQ card */
+.faq-item {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Hover effect */
+.faq-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* Question style */
+.question {
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+  line-height: 1.4;
+}
+
+/* Answer hidden by default */
+.answer {
+  margin-top: 12px;
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+/* Visible answer (when clicked) */
+.answer.visible {
+  max-height: 200px;
+  opacity: 1;
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+
