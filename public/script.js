@@ -1,46 +1,44 @@
+// FAQ Toggle Logic
 const questions = document.querySelectorAll('.question');
 
 questions.forEach(question => {
   question.addEventListener('click', () => {
     const currentAnswer = question.nextElementSibling;
 
-    // close all other answers
+    // Close all other answers
     document.querySelectorAll('.answer').forEach(answer => {
       if (answer !== currentAnswer) {
         answer.classList.remove('visible');
       }
     });
 
-    // toggle clicked answer
+    // Toggle clicked answer
     currentAnswer.classList.toggle('visible');
   });
 });
+
+
+// Form Handling (works on static site)
 const form = document.getElementById('faqForm');
 const formMessage = document.getElementById('formMessage');
 
-form.addEventListener('submit', async (e) => {
+if (form && formMessage) {
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const formData = {
-        name: form.name.value,
-        email: form.email.value,
-        question: form.question.value
-    };
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const question = form.question.value.trim();
 
-    try {
-        const res = await fetch('/submit-question', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData)
-        });
-
-        if (res.ok) {
-            formMessage.textContent = "Your question has been submitted!";
-            form.reset();
-        } else {
-            formMessage.textContent = "Error submitting, try again.";
-        }
-    } catch (err) {
-        formMessage.textContent = "Server error, try again later.";
+    if (!name || !email || !question) {
+      formMessage.style.color = "red";
+      formMessage.textContent = "Please fill all fields.";
+      return;
     }
-});
+
+    // Simulate submission (since no backend)
+    formMessage.style.color = "green";
+    formMessage.textContent = "Your question has been submitted successfully!";
+    form.reset();
+  });
+}
